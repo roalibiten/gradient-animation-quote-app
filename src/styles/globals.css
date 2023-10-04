@@ -1,0 +1,40 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html{
+  overflow: hidden !important;
+}
+
+.main{
+  overflow-x:hidden;
+  overflow: hidden;
+}
+
+.mask {
+  width: 250%;
+  height: 250%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 2;
+  animation-name: swipe;
+  animation-duration: 4s;
+  transform: rotateY(0deg) rotate(45deg);
+}
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
+/* Define the animation */
+@keyframes swipe {
+  0% {
+    left: -200%;
+    bottom: -200%;
+  }
+  100% {
+    left: 0%;
+    bottom: 0%;
+  }
+}
+
