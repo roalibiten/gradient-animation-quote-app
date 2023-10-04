@@ -32,8 +32,9 @@ export default function Home() {
   };
 
   useEffect(() => {
-    // Fetch data from the API route
     getNewQuote()
+
+    setInterval(()=>{ handleChangeColor()},3000)
   }, []);
 
 
@@ -75,10 +76,10 @@ export default function Home() {
       
       <div className=" shadow-md absolute z-10 bg-white text-black text-center  rounded-md w-[30vw] py-[2rem]">
         <p className=" mx-auto pl-2 pr-2 ">{quote}</p>
-        <p className=" mx-auto  pl-2 pr-2">- {author}</p>
-        <div  onClick={handleChangeColor} className=" cursor-pointer text-white mx-auto  mt-6 py-1 rounded-md w-1/3 bg-purple-500">
+        {author&&<p className=" mx-auto  pl-2 pr-2">- {author}</p>}
+        {/* <div  onClick={handleChangeColor} className=" cursor-pointer text-white mx-auto  mt-6 py-1 rounded-md w-1/3 bg-purple-500">
           <p>Get a quote!</p>
-        </div>
+        </div> */}
       </div>
     </main>
   )
